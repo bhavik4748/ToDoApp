@@ -1,0 +1,22 @@
+* {
+    font-family: sans-serif;
+    background-color: cornsilk;
+}
+
+.todoLabel{
+    padding:20px 0px;
+    size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header{
+    width: 500px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.taskClass{
+    padding-top: 20px;
+}
+
