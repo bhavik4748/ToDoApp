@@ -37,7 +37,7 @@ function App() {
     let taskHeader = null;
     if (taskList.length > 0) {
         taskHeader = (
-            <div className={classes.todoLabel}>
+            <div className={classes.taskListLabel}>
                 Task List
             </div>
         )
