@@ -5,14 +5,23 @@ import { Task } from './Components/Task/Task';
 import { InputData } from './Components/InputData/InputData';
 
 function App() {
-    const [taskList, setTaskList] = useState([]);
+    const getItemsfromLS = () => {
+        if (window.localStorage.length > 0)
+            return JSON.parse(window.localStorage.getItem('taskList'));
+        else
+            return [];
+    }
+
+    const saveItemsToLS = (arr) => {
+        window.localStorage.setItem('taskList', JSON.stringify(arr));
+    }
+
+    const [taskList, setTaskList] = useState(getItemsfromLS());
     const [inputVal, setInputVal] = useState('');
 
     const changeHandler = (event) => {
         setInputVal(event.target.value);
     }
-
-
 
     const addItem = (event) => {
         event.preventDefault();
@@ -20,6 +29,7 @@ function App() {
             let arr = [...taskList];
             arr.push({ 'val': inputVal, 'done': false });
             setTaskList([...arr]);
+            saveItemsToLS(arr);
             setInputVal('');
         }
     }
@@ -28,12 +38,14 @@ function App() {
         let arr = [...taskList];
         arr.splice(index, 1);
         setTaskList([...arr]);
+        saveItemsToLS(arr);
     }
 
     const taskComplete = (event, index) => {
         let arr = [...taskList];
         arr[index]['done'] = true;
         setTaskList([...arr]);
+        saveItemsToLS(arr);
     }
 
     let taskHeader = null;
@@ -67,9 +79,6 @@ function App() {
                     <button type="submit">Add Task</button>
                 </div>
             </form>
-
-
-
             <div className={classes.taskClass}>
                 {taskHeader}
                 {task}
