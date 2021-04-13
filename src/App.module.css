@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.taskListLabel{
+.taskListLabel {
     padding: 10px 0px;
     size: 18px;
     font-weight: bold;
@@ -30,6 +30,11 @@
 form>div>button {
     background-color: green;
     color: white;
+}
+
+button {
+    height: 30px;
+    padding: 5px;
 }
 
 @media screen and (max-width:320px) {

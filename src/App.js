@@ -16,10 +16,12 @@ function App() {
 
     const addItem = (event) => {
         event.preventDefault();
-        let arr = [...taskList];
-        arr.push({ 'val': inputVal, 'done': false });
-        setTaskList([...arr]);
-        setInputVal('');
+        if (inputVal.trim().length > 0) {
+            let arr = [...taskList];
+            arr.push({ 'val': inputVal, 'done': false });
+            setTaskList([...arr]);
+            setInputVal('');
+        }
     }
 
     const taskRemove = (event, index) => {

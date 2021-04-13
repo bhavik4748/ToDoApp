@@ -6,7 +6,7 @@ export const InputData = (props) => {
     return (
         <div >
             <div className={classes.test}>
-                <input type="text" value={props.val} onChange={props.changed}></input>
+                <input type="text" placeholder="add your task"  value={props.val} onChange={props.changed}></input>
             </div>
 
         </div>
