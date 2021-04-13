@@ -3,11 +3,6 @@ import classes from './InputData.module.css'
 
 export const InputData = (props) => {
 
-    const [todoVal, setTodoVal] = useState([]);
-
-
-
-
     return (
         <div >
             <div className={classes.test}>

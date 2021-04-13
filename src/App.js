@@ -12,10 +12,12 @@ function App() {
         setInputVal(event.target.value);
     }
 
+
+
     const addItem = (event) => {
         event.preventDefault();
         let arr = [...taskList];
-        arr.push(inputVal);
+        arr.push({ 'val': inputVal, 'done': false });
         setTaskList([...arr]);
         setInputVal('');
     }
@@ -27,12 +29,23 @@ function App() {
     }
 
     const taskComplete = (event, index) => {
+        let arr = [...taskList];
+        arr[index]['done'] = true;
+        setTaskList([...arr]);
+    }
 
+    let taskHeader = null;
+    if (taskList.length > 0) {
+        taskHeader = (
+            <div className={classes.todoLabel}>
+                Task List
+            </div>
+        )
     }
 
     let task = taskList.map((a, index) => {
         return (
-            <Task key={index} taskName={a} index={index}
+            <Task key={index} taskName={a.val} index={index} isCompleted={a.done}
                 remove={(event) => taskRemove(event, index)}
                 complete={(event) => taskComplete(event, index)} />
         )
@@ -49,16 +62,14 @@ function App() {
                 </div>
 
                 <div>
-                    <button type="submit">Add</button>
+                    <button type="submit">Add Task</button>
                 </div>
             </form>
 
 
 
             <div className={classes.taskClass}>
-                <div className={classes.todoLabel}>
-                    Task List
-            </div>
+                {taskHeader}
                 {task}
             </div>
         </div>

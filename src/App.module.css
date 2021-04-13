@@ -3,20 +3,39 @@
     background-color: cornsilk;
 }
 
-.todoLabel{
-    padding:20px 0px;
+.todoLabel {
+    padding: 20px 0px;
     size: 18px;
     font-weight: bold;
     text-align: center;
 }
 
-.header{
+.taskListLabel{
+    padding: 10px 0px;
+    size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header {
     width: 500px;
     margin: auto;
     padding-top: 30px;
 }
 
-.taskClass{
+.taskClass {
     padding-top: 20px;
 }
 
+form>div>button {
+    background-color: green;
+    color: white;
+}
+
+@media screen and (max-width:320px) {
+    .header {
+        width: 100%;
+        margin: auto;
+        padding-top: 20px;
+    }
+}

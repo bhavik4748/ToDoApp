@@ -1,0 +1,26 @@
+.isCompleted {
+    text-decoration: line-through;
+}
+
+.taskStyle {
+    padding: 15px 0px;
+    margin: 5px 0px;
+    border: 1px solid black;
+    background-color:whitesmoke;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.taskStyle > div{
+    background-color:whitesmoke;
+    padding: 5px;;
+    align-self: center;
+    display: flex;
+}
+.taskStyle > div > button{
+    padding: 3px;
+    margin: 5px;
+    background-color:whitesmoke;
+    width: 25px;
+}
